@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <header className="bg-gray-800 text-white py-4 shadow-lg">
       <nav className='container mx-auto flex justify-between items-center px-4'>
-        <Link href="/"><h3 className='text-white text-2xl font-bold'>Get Shit Go</h3></Link>
+        <Link href="/"><h3 className='text-white text-2xl font-bold'>Soul era</h3></Link>
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
