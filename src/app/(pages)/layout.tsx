@@ -9,8 +9,8 @@ import Footer from "@/app/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Get Shit Go",
-  description: "Download high quality images for free.",
+  title: "Soul era",
+  description: "Shoppingg...",
 };
 
 export default function RootLayout({
