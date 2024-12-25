@@ -3,7 +3,7 @@
         "id":1,
         "brand":"Flick",
         "name": "T-shirt round neck",
-        "size":"4.xMB",
+        "size":"S M L XL",
         "price":299,
         "imageUrl":"image1.jpg"
     },
@@ -11,7 +11,7 @@
         "id":2,
         "brand":"FX",
         "name": "Polo neck T-shirt",
-        "size":"0.5xMB",
+        "size":"S M L XL",
         "price":399,
         "imageUrl":"image2.jpg"
     },
@@ -19,7 +19,7 @@
         "id":3,
         "brand":"Z5",
         "name": "T-shirt round neck",
-        "size":"3.xMB",
+        "size":"S M L XL",
         "price":299,
         "imageUrl":"image3.jpg"
     },
@@ -27,7 +27,7 @@
         "id":4,
         "brand":"X5",
         "name": "T-shirt round neck",
-        "size":"3.xMB",
+        "size":"S M L XL",
         "price":699,
         "imageUrl":"image4.jpg"
     },
@@ -35,7 +35,7 @@
         "id":5,
         "brand":"Souled era",
         "name": "T-shirt round neck",
-        "size":"4.xMB",
+        "size":"S M L XL",
         "price":799,
         "imageUrl":"image5.jpg"
     },
@@ -43,7 +43,7 @@
         "id":6,
         "brand":"POCO X5",
         "name": "T-shirt round neck",
-        "size":"0.5xMB",
+        "size":"S M L XL",
         "price":3,
         "imageUrl":"image2.jpg"
     }
