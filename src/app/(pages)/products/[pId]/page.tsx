@@ -17,17 +17,9 @@ const ProductCard = () => {
 
   // Retrieve the dynamic 'id' parameter from the URL
   const pId = Array.isArray(params.pId) ? parseInt(params.pId[0], 10) : parseInt(params.pId, 10);
-  
+
   // Fallback: Early return if the product is not found.
   const product = productlist.find(item => item.id === pId);
-  if (!product) {
-    return <p>Product not found</p>;
-  }
-
-  // Initialize hooks outside of conditional logic
-  const [selectedImage, setSelectedImage] = useState(product.images[0]);
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-  const [isVisible, setIsVisible] = useState<boolean>(true);
 
   const {
     cart,
@@ -42,6 +34,17 @@ const ProductCard = () => {
       setIsVisible(true);
     }
   }, [cart, pId]); // Ensure effect runs whenever `cart` or `pId` changes.
+
+
+  if (!product) {
+    return <p>Product not found</p>;
+  }
+
+  // Initialize hooks outside of conditional logic
+  const [selectedImage, setSelectedImage] = useState(product.images[0]);
+  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+
 
   const handleImageClick = (image: string) => {
     setSelectedImage(image);
