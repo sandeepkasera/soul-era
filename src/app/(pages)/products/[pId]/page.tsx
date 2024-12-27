@@ -35,6 +35,14 @@ const ProductCard = () => {
     remove
   } = useCart();
 
+  useEffect(() => {
+    if (cart.includes(pId)) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+  }, [cart, pId]); // Ensure effect runs whenever `cart` or `pId` changes.
+
   const handleImageClick = (image: string) => {
     setSelectedImage(image);
   };
@@ -52,15 +60,6 @@ const ProductCard = () => {
     setIsVisible(true);
     remove(id);
   };
-
-  useEffect(() => {
-    if (cart.includes(pId)) {
-      setIsVisible(false);
-    } else {
-      setIsVisible(true);
-    }
-  }, [cart, pId]); // Ensure effect runs whenever `cart` or `pId` changes.
-
   return (
     <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-black">
       <div className="h-full w-full basis-full lg:basis-4/6">
