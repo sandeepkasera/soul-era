@@ -1,6 +1,7 @@
 import Card from "@/app/components/card";
 import productlist from "@/app/assets/data/productlist.json";
 import Carousel from '@/app/components/carousel';
+import HeroSection from "@/app/components/heroSection";
 
 
 
@@ -36,6 +37,10 @@ const products = () => {
           />
         ))}
       </div>
+      <div className="Hero">
+        <HeroSection />
+      </div>
+
     </div>
   );
 };
