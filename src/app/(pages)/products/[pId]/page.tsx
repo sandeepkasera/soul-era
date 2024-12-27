@@ -26,8 +26,8 @@ const ProductCard = () => {
 
   console.log(product, 'dfd')
   // Fallback to the first image or an empty string if images is empty or undefined
-  const [selectedImage, setSelectedImage] = useState(product.images[0] || '/images/image1.jpg');
-  const [selectedColor, setSelectedColor] = useState(product.colors[0] || '');
+  const [selectedImage, setSelectedImage] = useState(product.images[0]);
+  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
 
   //   useEffect(() => {
   //     // Ensures that the selected image is updated when images prop changes
