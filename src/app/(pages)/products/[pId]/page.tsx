@@ -29,12 +29,6 @@ const ProductCard = () => {
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
 
-  //   useEffect(() => {
-  //     // Ensures that the selected image is updated when images prop changes
-  //     if (images && product.images.length > 0) {
-  //       setSelectedImage(images[0]);
-  //     }
-  //   }, [images]);
 
   const {
     cart,
