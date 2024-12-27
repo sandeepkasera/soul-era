@@ -1,47 +1,62 @@
-import React from 'react';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  desktopImg: string;
+  mobileImg: string;
+  link: string;
+  altText: string;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ desktopImg, mobileImg, link, altText }) => {
   return (
     <section
-      id="hero-section"
-      className="relative w-full"
+      id="sf__hero-section"
+      className="w-full relative bg-gray-200 mb-10"
+      style={{ "--content-color": "white" } as React.CSSProperties}
     >
-      {/* Desktop Background */}
-      <div
-        className="hidden md:block overflow-hidden"
-      >
-        <img
-          src="//soulandpeace.com/cdn/shop/files/Soul_Peace_-_India_Brand_Vocalforlocal.jpg?v=1614408663&width=1500"
-          srcSet="
-            //soulandpeace.com/cdn/shop/files/Soul_Peace_-_India_Brand_Vocalforlocal.jpg?v=1614408663&width=375 375w,
-            //soulandpeace.com/cdn/shop/files/Soul_Peace_-_India_Brand_Vocalforlocal.jpg?v=1614408663&width=550 550w,
-            //soulandpeace.com/cdn/shop/files/Soul_Peace_-_India_Brand_Vocalforlocal.jpg?v=1614408663&width=750 750w,
-            //soulandpeace.com/cdn/shop/files/Soul_Peace_-_India_Brand_Vocalforlocal.jpg?v=1614408663&width=1100 1100w,
-            //soulandpeace.com/cdn/shop/files/Soul_Peace_-_India_Brand_Vocalforlocal.jpg?v=1614408663&width=1500 1500w
-          "
-          width="1280"
-          height="638"
-          loading="lazy"
-          sizes="100vw"
-          className="object-cover w-full h-full"
-          alt="Soul and Peace"
-        />
+      <div className="relative">
+        {/* Desktop Background Image */}
+        <div className="hidden md:block overflow-hidden">
+          <Image
+            src={desktopImg}
+            alt={altText}
+            width={1400}
+            height={760}
+            sizes="100vw"
+            className="h-auto"
+            priority
+          />
+        </div>
+        {/* Mobile Background Image */}
+        <div className="block md:hidden">
+          <Image
+            src={mobileImg}
+            alt={altText}
+            width={750}
+            height={760}
+            sizes="100vw"
+            className="h-auto"
+            loading="lazy"
+          />
+        </div>
+        {/* Link Wrapper */}
+        <Link href={link} className="absolute inset-0"></Link>
       </div>
-
-      {/* Mobile Background */}
-      <div
-        className="block md:hidden"
-      >
-        <img
-          src="/images/made-india.jpg"
-          width="1280"
-          height="638"
-          loading="lazy"
-          sizes="100vw"
-          className="object-cover w-full h-full"
-          alt="Soul and Peace"
-        />
-      </div>
+      {/* Hero Content */}
+      {/* <div className="absolute inset-0 flex justify-center items-center">
+        <div className="text-center">
+          <h1 className="text-white text-3xl md:text-5xl font-bold">Explore Oversized T-Shirts</h1>
+          <p className="text-white text-lg mt-4">Comfort and style for every season.</p>
+          <Link
+            href={link}
+            className="mt-6 inline-block bg-purple-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-purple-800 transition"
+          >
+            Shop Now
+          </Link>
+        </div>
+      </div> */}
     </section>
   );
 };
