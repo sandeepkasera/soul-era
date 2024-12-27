@@ -94,7 +94,7 @@ export default function LoginPage() {
                         >
                             Login Here
                         </button>
-                        <Link href="/signup" >Visit Signup Page</Link>
+                        <Link href="/signup" className="text-[#A1A1A1] text-sm mt-2">Dont have an account? Sign Up</Link>
                     </div>
                 </div>
             </form>
