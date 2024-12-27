@@ -4,7 +4,6 @@ import productlist from "@/app/assets/data/productlist.json";
 import { useParams } from "next/navigation"; // Use 'next/navigation' to get route params in app directory
 import { useCart } from "../../../context/cart/cartContext";
 
-
 type ProductProps = {
   name: string;
   price: number;
@@ -18,22 +17,23 @@ const ProductCard = () => {
 
   // Retrieve the dynamic 'id' parameter from the URL
   const pId = Array.isArray(params.pId) ? parseInt(params.pId[0], 10) : parseInt(params.pId, 10);
-  // Find the product by ID
+  
+  // Fallback: Early return if the product is not found.
   const product = productlist.find(item => item.id === pId);
   if (!product) {
     return <p>Product not found</p>;
   }
 
-  console.log(product, 'dfd')
-  // Fallback to the first image or an empty string if images is empty or undefined
+  // Initialize hooks outside of conditional logic
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-
+  const [isVisible, setIsVisible] = useState<boolean>(true);
 
   const {
     cart,
     addTocart,
-    remove } = useCart();
+    remove
+  } = useCart();
 
   const handleImageClick = (image: string) => {
     setSelectedImage(image);
@@ -42,23 +42,24 @@ const ProductCard = () => {
   const handleColorClick = (color: string) => {
     setSelectedColor(color);
   };
-  const [isVisible, setIsVisible] = useState<boolean>(true);
+
   const handleAddToCart = (id: number) => {
-    setIsVisible(false)
-    addTocart(id)
-  }
+    setIsVisible(false);
+    addTocart(id);
+  };
+
   const handleRemove = (id: number) => {
-    setIsVisible(true)
-    remove(id)
-  }
+    setIsVisible(true);
+    remove(id);
+  };
+
   useEffect(() => {
     if (cart.includes(pId)) {
       setIsVisible(false);
     } else {
       setIsVisible(true);
     }
-  }, [cart, pId]); // Make sure the effect runs whenever `cart` or `id` changes.
-
+  }, [cart, pId]); // Ensure effect runs whenever `cart` or `pId` changes.
 
   return (
     <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-black">
