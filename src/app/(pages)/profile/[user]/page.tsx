@@ -42,7 +42,7 @@ export default function ProfilePage({params}: any) {
                 name={product.name}
                 size={product.size}
                 price={product.price}
-                image={product.imageUrl}
+                image={product.images}
             />
             ))}
       </div>
