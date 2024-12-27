@@ -27,16 +27,16 @@ const ProductCard = () => {
   console.log(product, 'dfd')
   // Fallback to the first image or an empty string if images is empty or undefined
   const [selectedImage, setSelectedImage] = useState(product.images[0] || '/images/image1.jpg');
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]|| '');
+  const [selectedColor, setSelectedColor] = useState(product.colors[0] || '');
 
-//   useEffect(() => {
-//     // Ensures that the selected image is updated when images prop changes
-//     if (images && product.images.length > 0) {
-//       setSelectedImage(images[0]);
-//     }
-//   }, [images]);
+  //   useEffect(() => {
+  //     // Ensures that the selected image is updated when images prop changes
+  //     if (images && product.images.length > 0) {
+  //       setSelectedImage(images[0]);
+  //     }
+  //   }, [images]);
 
-const {
+  const {
     cart,
     addTocart,
     remove } = useCart();
@@ -57,13 +57,15 @@ const {
     setIsVisible(true)
     remove(id)
   }
-  
-    useEffect(() => {
-      if (cart.includes(pId)) {
-        setIsVisible(false)
-      }    
-    })
-  
+  useEffect(() => {
+    if (cart.includes(pId)) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+  }, [cart, pId]); // Make sure the effect runs whenever `cart` or `id` changes.
+
+
   return (
     <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-black">
       <div className="h-full w-full basis-full lg:basis-4/6">
@@ -138,21 +140,21 @@ const {
         <div className="prose mb-6 text-sm leading-tight dark:text-white/[60%]">{product.description}</div>
 
         <form>
-        {isVisible && (
-          <button
-            className="relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white hover:opacity-60"
-            onClick={() => handleAddToCart(pId)}
-          >
-            Add To Cart
-          </button>
+          {isVisible && (
+            <button
+              className="relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white hover:opacity-60"
+              onClick={() => handleAddToCart(pId)}
+            >
+              Add To Cart
+            </button>
           )}
           {!isVisible && (
-          <button
-            className="relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white hover:opacity-60"
-            onClick={() => handleRemove(pId)}
-          >
-            Remove from Cart
-          </button>
+            <button
+              className="relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white hover:opacity-60"
+              onClick={() => handleRemove(pId)}
+            >
+              Remove from Cart
+            </button>
           )}
         </form>
       </div>
