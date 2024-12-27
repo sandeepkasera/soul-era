@@ -38,7 +38,7 @@ const Card = ({ id, brand, name, size, price, image }: cardProps) => {
   }, [cart, id]);
 
   return (
-    <div className="bg-white border-gray-400 border-2 sm:w-1/2 md:w-1/3 lg:w-1/4 rounded overflow-hidden shadow-lg flex flex-col m-4">
+    <div className="bg-white border-gray-400 border-2 rounded overflow-hidden shadow-lg flex flex-col m-2 ">
       <Link href={`/products/${id}`}>
         <div className="aspect-w-3 aspect-h-4">
           <img

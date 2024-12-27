@@ -12,8 +12,8 @@ const products = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="card-list flex flex-wrap justify-center gap-4">
+    <div className="container mx-auto py-4">
+      <div className="card-list flex flex-wrap justify-center">
         <Carousel
           slides={slides}
           carouselWidth="60rem"
@@ -23,7 +23,7 @@ const products = () => {
         />
       </div>
 
-      <div className="card-list flex flex-wrap justify-center gap-4 mt-8">
+      <div className="card-list flex flex-wrap justify-center mt-8">
         {productlist.map((product) => (
           <Card
             key={product.id}
