@@ -5,7 +5,9 @@
         "name": "T-shirt round neck",
         "size":"S M L XL",
         "price":299,
-        "imageUrl":"image1.jpg"
+        "images":["image1.jpg"],
+        "colors": ["Grey", "Black", "White"],
+        "description": "Full Sized"
     },
     {
         "id":2,
@@ -13,7 +15,9 @@
         "name": "Polo neck T-shirt",
         "size":"S M L XL",
         "price":399,
-        "imageUrl":"image2.jpg"
+        "images":["image2.jpg"],
+        "colors": ["Grey", "Black", "White"],
+        "description": "Full Sized"
     },
     {
         "id":3,
@@ -21,7 +25,9 @@
         "name": "T-shirt round neck",
         "size":"S M L XL",
         "price":299,
-        "imageUrl":"image3.jpg"
+        "images":["image3.jpg"],
+        "colors": ["Grey", "Black", "White"],
+        "description": "Full Sized"
     },
     {
         "id":4,
@@ -29,22 +35,28 @@
         "name": "T-shirt round neck",
         "size":"S M L XL",
         "price":699,
-        "imageUrl":"image4.jpg"
+        "images":["image4.jpg"],
+        "colors": ["Grey", "Black", "White"],
+        "description": "Over Sized"
     },
     {
         "id":5,
-        "brand":"Souled era",
+        "brand":"Soul era",
         "name": "T-shirt round neck",
         "size":"S M L XL",
         "price":799,
-        "imageUrl":"image5.jpg"
+        "images":["image5.jpg"],
+        "colors": ["Grey", "Black", "White"],
+        "description": "Short Sized"
     },
     {
         "id":6,
-        "brand":"POCO X5",
+        "brand":"Flick",
         "name": "T-shirt round neck",
-        "size":"0.5xMB",
-        "price":3,
-        "imageUrl":"image2.jpg"
+        "size":"L XL",
+        "price":399,
+        "images":["image2.jpg"],
+        "colors": ["Grey", "Black", "White"],
+        "description": "Long Sized"
     }
 ]

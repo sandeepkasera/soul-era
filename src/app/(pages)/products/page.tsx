@@ -10,19 +10,20 @@ const products = () => {
     "/images/image2.jpg",
     "/images/image3.jpg"
   ];
+
   return (
-    <div>
-      <div className="card-list flex-row flex-wrap space-x-4 object-cover sm:flex md:flex justify-center gap-4 mt-4">
+    <div className="container mx-auto px-4 py-8">
+      <div className="card-list flex flex-wrap justify-center gap-4">
         <Carousel
           slides={slides}
-          carouselWidth="50rem"
+          carouselWidth="60rem"
           autoSlide
-          // effect="fade"
           autoSlideInterval={2000}
           controllArrowSize={30}
         />
       </div>
-      <div className="card-list flex-row flex-wrap space-x-4 object-cover sm:flex md:flex justify-center gap-4 mt-4">
+
+      <div className="card-list flex flex-wrap justify-center gap-4 mt-8">
         {productlist.map((product) => (
           <Card
             key={product.id}
@@ -31,7 +32,7 @@ const products = () => {
             name={product.name}
             size={product.size}
             price={product.price}
-            image={product.imageUrl}
+            image={product.images}
           />
         ))}
       </div>
