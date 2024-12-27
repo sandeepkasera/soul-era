@@ -27,6 +27,11 @@ const ProductCard = () => {
     remove
   } = useCart();
 
+  // Initialize hooks outside of conditional logic
+  const [selectedImage, setSelectedImage] = useState(product?.images[0]);
+  const [selectedColor, setSelectedColor] = useState(product?.colors[0]);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+
   useEffect(() => {
     if (cart.includes(pId)) {
       setIsVisible(false);
@@ -35,15 +40,9 @@ const ProductCard = () => {
     }
   }, [cart, pId]); // Ensure effect runs whenever `cart` or `pId` changes.
 
-
   if (!product) {
     return <p>Product not found</p>;
   }
-
-  // Initialize hooks outside of conditional logic
-  const [selectedImage, setSelectedImage] = useState(product.images[0]);
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-  const [isVisible, setIsVisible] = useState<boolean>(true);
 
 
   const handleImageClick = (image: string) => {
@@ -72,17 +71,17 @@ const ProductCard = () => {
               alt={product.name}
               decoding="async"
               className="h-full w-full object-contain"
-              src={`/images/${selectedImage}` || '/path/to/placeholder-image.png'} // Use a placeholder image if no image is selected
+              src={`/images/${selectedImage}`} // Use a placeholder image if no image is selected
             />
             <div className="absolute bottom-[15%] flex w-full justify-center">
               <div className="mx-auto flex h-11 items-center rounded-full border border-white bg-neutral-50/80 text-neutral-500 backdrop-blur dark:border-black dark:bg-neutral-900/80">
                 <button
                   aria-label="Previous product image"
-                  onClick={() => {
-                    const currentIndex = product.images.indexOf(selectedImage);
-                    const previousIndex = (currentIndex - 1 + product.images.length) % product.images.length;
-                    setSelectedImage(product.images[previousIndex]);
-                  }}
+                  // onClick={() => {
+                  //   const currentIndex = product.images.indexOf(selectedImage);
+                  //   const previousIndex = (currentIndex - 1 + product.images.length) % product.images.length;
+                  //   setSelectedImage(product.images[previousIndex]);
+                  // }}
                   className="h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-black dark:hover:text-white flex items-center justify-center"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5">
@@ -92,11 +91,11 @@ const ProductCard = () => {
                 <div className="mx-1 h-6 w-px bg-neutral-500"></div>
                 <button
                   aria-label="Next product image"
-                  onClick={() => {
-                    const currentIndex = product.images.indexOf(selectedImage);
-                    const nextIndex = (currentIndex + 1) % product.images.length;
-                    setSelectedImage(product.images[nextIndex]);
-                  }}
+                  // onClick={() => {
+                  //   const currentIndex = product.images.indexOf(selectedImage);
+                  //   const nextIndex = (currentIndex + 1) % product.images.length;
+                  //   setSelectedImage(product.images[nextIndex]);
+                  // }}
                   className="h-full px-6 transition-all ease-in-out hover:scale-110 hover:text-black dark:hover:text-white flex items-center justify-center"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5">
