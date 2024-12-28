@@ -25,7 +25,7 @@ export default function RootLayout({
           <div className="w-full bg-[#FF6166] text-white text-center py-2.5 text-base sticky top-0 z-50 text-xs">
             Free Shipping Available. Fast Processing.
           </div>
-          <div className="min-h-screen flex flex-col">
+          <div className="min-h-screen flex flex-col bg-white text-black">
             <Header />
             <main className="flex-grow">{children}</main>
             <Footer />

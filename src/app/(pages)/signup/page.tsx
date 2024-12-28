@@ -43,7 +43,7 @@ export default function SignupPage() {
     return (
         <section className="flex items-center justify-center w-full xs:h-80vh">
             <form
-                className="xs:p-10 w-full max-w-350 flex flex-col justify-between items-center border border-solid border-[#2E2E2E] bg-[#0A0A0A] rounded-md"
+                className="xs:p-10 w-full max-w-350 flex flex-col justify-between items-center border border-solid border-[#CCC] bg-white rounded-md"
                 onSubmit={onSignup}
             >
                 {error && (
@@ -67,48 +67,48 @@ export default function SignupPage() {
                     </div>
                 )}
                 <div className="flex flex-col items-center justify-center min-h-[calc(100vh-9.6rem)] py-2">
-                    <h1 className="w-full mb-3 text-2xl font-bold">{loading ? "Processing" : "Signup"}</h1>
-                    <div className="my-2 w-full">
-                        <label htmlFor="username" className="w-full">Username: </label>
+                    <h1 className="w-9/12 mb-3 text-2xl font-bold text-black">{loading ? "Processing" : "Signup"}</h1>
+                    <div className="my-2 w-9/12">
+                        <label htmlFor="username" className="w-full text-black">Username: </label>
                         <input
                             id="username"
                             type="text"
-                            className="w-full text-[#A1A1A1] h-8 border border-solid border-[#2E2E2E] py-1 px-2.5 rounded bg-black text-13 mb-3"
+                            className="w-full text-black h-8 border border-solid border-[#CCC] py-1 px-2.5 rounded bg-white text-13 mb-3"
                             value={user.username}
                             onChange={(e) => setUser({ ...user, username: e.target.value })}
                             required
                             placeholder="Username"
                         />
-                        <label htmlFor="email" className="w-full">Email: </label>
+                        <label htmlFor="email" className="w-full text-black">Email: </label>
                         <input
                             id="email"
                             type="email"
-                            className="w-full text-[#A1A1A1] h-8 border border-solid border-[#2E2E2E] py-1 px-2.5 rounded bg-black text-13 mb-3"
+                            className="w-full text-black h-8 border border-solid border-[#CCC] py-1 px-2.5 rounded bg-white text-13 mb-3"
                             value={user.email}
                             onChange={(e) => setUser({ ...user, email: e.target.value })}
                             required
                             placeholder="Email"
                         />
-                        <label htmlFor="password" className="w-full">Password: </label>
+                        <label htmlFor="password" className="w-full text-black">Password: </label>
                         <input
                             id="password"
                             type="password"
-                            className="w-full text-[#A1A1A1] h-8 border border-solid border-[#2E2E2E] py-1 px-2.5 rounded bg-black text-13 mb-3"
+                            className="w-full text-black h-8 border border-solid border-[#CCC] py-1 px-2.5 rounded bg-white text-13 mb-3"
                             value={user.password}
                             onChange={(e) => setUser({ ...user, password: e.target.value })}
                             required
                             placeholder="Password"
                         />
                     </div>
-                    <div className="w-full">
+                    <div className="w-9/12">
                         <button
                             type="submit"
                             disabled={buttonDisabled}
-                            className="flex text-[#A1A1A1] items-center justify-center transition my-2 duration-150 py-2 px-2 bg-black border border-solid rounded border-[#2E2E2E] ease hover:bg-[#1F1F1F]"
+                            className="flex text-black items-center justify-center transition my-2 duration-150 py-2 px-2 bg-white border border-solid rounded border-[#CCC] ease hover:bg-[#F1F1F1]"
                         >
                             Signup Here
                         </button>
-                        <Link href="/login" className="text-[#A1A1A1] text-sm mt-2">Already have an account? Login</Link>
+                        <Link href="/login" className="text-black text-sm mt-2">Already have an account? Login</Link>
                     </div>
                 </div>
             </form>

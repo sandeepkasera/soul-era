@@ -84,9 +84,9 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter('men')}
                 onMouseLeave={() => handleMouseLeave('men')}
                 >
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/men/clothing">Clothing</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/men/accessories">Accessories</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/men/shoes">Shoes</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600 text-gray-600 "><Link href="/men/clothing">Clothing</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600 text-gray-600 "><Link href="/men/accessories">Accessories</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600 text-gray-600 "><Link href="/men/shoes">Shoes</Link></li>
                   {/* Add more categories as needed */}
                 </ul>
               </div>
@@ -106,9 +106,9 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter('women')}
                 onMouseLeave={() => handleMouseLeave('women')}
                 >
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/women/clothing">Clothing</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/women/accessories">Accessories</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/women/shoes">Shoes</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/women/clothing">Clothing</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/women/accessories">Accessories</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/women/shoes">Shoes</Link></li>
                   {/* Add more categories as needed */}
                 </ul>
               </div>
@@ -128,9 +128,9 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter('kids')}
                 onMouseLeave={() => handleMouseLeave('kids')}
                 >
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/kids/clothing">Clothing</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/kids/toys">Toys</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/kids/shoes">Shoes</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/kids/clothing">Clothing</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/kids/toys">Toys</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/kids/shoes">Shoes</Link></li>
                   {/* Add more categories as needed */}
                 </ul>
               </div>
@@ -147,9 +147,9 @@ const Header = () => {
             {isDropdownOpen.themes && (
               <div className="absolute left-0 top-full w-48 bg-white text-black shadow-lg py-2 z-50">
                 <ul>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/themes/summer">Summer</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/themes/winter">Winter</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/themes/festival">Festival</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/themes/summer">Summer</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/themes/winter">Winter</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/themes/festival">Festival</Link></li>
                 </ul>
               </div>
             )}
@@ -165,9 +165,9 @@ const Header = () => {
             {isDropdownOpen.wishlist && (
               <div className="absolute left-0 top-full w-48 bg-white text-black shadow-lg py-2 z-50">
                 <ul>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/wishlist/clothing">Clothing</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/wishlist/accessories">Accessories</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/wishlist/shoes">Shoes</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/wishlist/clothing">Clothing</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/wishlist/accessories">Accessories</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/wishlist/shoes">Shoes</Link></li>
                 </ul>
               </div>
             )}
@@ -183,9 +183,9 @@ const Header = () => {
             {isDropdownOpen.supersave && (
               <div className="absolute left-0 top-full w-48 bg-white text-black shadow-lg py-2 z-50">
                 <ul>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/supersave/deals">Deals</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/supersave/bundles">Bundles</Link></li>
-                  <li className="px-4 py-2 hover:bg-gray-200"><Link href="/supersave/offers">Offers</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/supersave/deals">Deals</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/supersave/bundles">Bundles</Link></li>
+                  <li className="px-4 py-2 hover:bg-gray-200 text-gray-600"><Link href="/supersave/offers">Offers</Link></li>
                 </ul>
               </div>
             )}
