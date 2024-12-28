@@ -22,7 +22,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ desktopImg, mobileImg, link, 
           <Image
             src={desktopImg}
             alt={altText}
-            width={1400}
+            width={1650}
             height={760}
             sizes="100vw"
             className="h-auto"

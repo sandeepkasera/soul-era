@@ -3,6 +3,7 @@ import productlist from "@/app/assets/data/productlist.json";
 import Carousel from '@/app/components/carousel';
 import HeroSection from "@/app/components/heroSection";
 import Link from "next/link";
+import Image from "next/image";
 
 
 
@@ -11,6 +12,16 @@ const products = () => {
     "/images/image1.jpg",
     "/images/image2.jpg",
     "/images/image3.jpg"
+  ];
+  const categories = [
+    { name: "T-shirts", imgSrc: "/images/tshirts.jpg" },
+    { name: "Oversized T-shirts", imgSrc: "/images/oversized_tees.webp" },
+    { name: "Hoodies", imgSrc: "/images/hoodies.webp" },
+    { name: "Sweatshirts", imgSrc: "/images/sweatshirt.webp" },
+    { name: "Full Sleeve", imgSrc: "/images/full_sleeve_tee.webp" },
+    { name: "Polo T-Shirt", imgSrc: "/images/polo_t-shirt.webp" },
+    { name: "Crop Top", imgSrc: "/images/crop_top.webp" },
+    { name: "Kids", imgSrc: "/images/kids_t-shirt.webp" },
   ];
 
   return (
@@ -23,7 +34,29 @@ const products = () => {
           altText="Oversized T-Shirt"
         />
       </div>
-      <div className="container">
+      <div className="wrapper">
+        <div className="py-10 px-5">
+          <h1 className="text-3xl font-bold text-center mb-8">Shop Products</h1>
+          <div className="flex flex-wrap justify-center gap-6 xl:flex-nowrap xl:justify-between max-w-screen-xl mx-auto">
+            {categories.map((category, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center space-y-3"
+              >
+                <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-200 rounded-full overflow-hidden shadow-md">
+                  <Image
+                    src={category.imgSrc}
+                    alt={category.name}
+                    width={128}
+                    height={128}
+                    className="object-cover w-full"
+                  />
+                </div>
+                <h2 className="text-sm md:text-base font-medium">{category.name}</h2>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="card-list flex flex-wrap justify-center">
           <Carousel
             slides={slides}
