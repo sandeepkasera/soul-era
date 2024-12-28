@@ -121,11 +121,11 @@ const SelectCollection = () => {
           ))}
         </div>
 
-        {currentCategory?.products?.length > 6 && (
+        {/* {currentCategory?.products?.length > 6 && (
           <button className="mt-4 block mx-auto px-6 py-2 bg-black text-white rounded-lg">
             View All
           </button>
-        )}
+        )} */}
       </div>
     </div>
   );
