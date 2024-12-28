@@ -4,6 +4,8 @@ import productlist from "@/app/assets/data/productlist.json";
 
 import Carousel from '@/app/components/carousel';
 import HeroSection from "@/app/components/heroSection";
+import NewLaunch from "@/app/components/newLaunch";
+import SelectCollection from "@/app/components/selectCollection";
 
 
 const products = () => {
@@ -55,6 +57,12 @@ const products = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="new-launch w-screen">
+          <NewLaunch/>
+        </div>
+        <div className="select-selection w-screen">
+          <SelectCollection/>
         </div>
         <div className="Hero">
           <HeroSection
