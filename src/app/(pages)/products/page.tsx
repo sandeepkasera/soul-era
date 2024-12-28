@@ -1,10 +1,9 @@
-import Card from "@/app/components/card";
-import productlist from "@/app/assets/data/productlist.json";
-import Carousel from '@/app/components/carousel';
-import HeroSection from "@/app/components/heroSection";
 import Link from "next/link";
 import Image from "next/image";
+import productlist from "@/app/assets/data/productlist.json";
 
+import Carousel from '@/app/components/carousel';
+import HeroSection from "@/app/components/heroSection";
 
 
 const products = () => {
@@ -57,27 +56,13 @@ const products = () => {
             ))}
           </div>
         </div>
-        <div className="card-list flex flex-wrap justify-center">
-          <Carousel
-            slides={slides}
-            carouselWidth="60rem"
-            autoSlide
-            autoSlideInterval={2000}
-            controllArrowSize={30}
+        <div className="Hero">
+          <HeroSection
+            desktopImg="/images/hero-image2.webp"
+            mobileImg="/images/hero-image2.webp"
+            link="/products"
+            altText="Kids Collection T-Shirt"
           />
-        </div>
-        <div className="card-list flex flex-wrap justify-center mt-8">
-          {productlist.map((product) => (
-            <Card
-              key={product.id}
-              id={product.id}
-              brand={product.brand}
-              name={product.name}
-              size={product.size}
-              price={product.price}
-              image={product.images}
-            />
-          ))}
         </div>
         <div className="Hero">
           <HeroSection

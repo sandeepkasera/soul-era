@@ -61,7 +61,7 @@ const Header = () => {
   return (
     <header className="bg-white text-black px-2 py-4 shadow-lg">
       <nav className="container mx-auto flex justify-between items-center">
-        <Link href="/"><h3 className="text-black text-2xl font-bold">Soul Era</h3></Link>
+        <Link href="/"><h3 className="text-black text-xl font-bold whitespace-nowrap">Soul Era</h3></Link>
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
